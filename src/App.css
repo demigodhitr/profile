@@ -1,0 +1,287 @@
+/* Cyberpunk Portfolio Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cyber-pink: #ff00ff;
+  --cyber-cyan: #00ffff;
+  --cyber-green: #00ff00;
+  --cyber-purple: #8a2be2;
+  --cyber-orange: #ff6600;
+  --dark-bg: #0a0a0a;
+  --dark-secondary: #1a1a1a;
+  --dark-tertiary: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.App {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Cyberpunk Glow Effects */
+.cyber-glow {
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+.cyber-glow-pink {
+  filter: drop-shadow(0 0 15px var(--cyber-pink));
+}
+
+.cyber-glow-cyan {
+  filter: drop-shadow(0 0 15px var(--cyber-cyan));
+}
+
+.cyber-glow-green {
+  filter: drop-shadow(0 0 15px var(--cyber-green));
+}
+
+/* Glass Morphism */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+}
+
+/* Neon Border Animation */
+@keyframes neonBorder {
+  0%, 100% {
+    border-color: var(--cyber-cyan);
+    box-shadow: 0 0 20px var(--cyber-cyan);
+  }
+  25% {
+    border-color: var(--cyber-pink);
+    box-shadow: 0 0 20px var(--cyber-pink);
+  }
+  50% {
+    border-color: var(--cyber-green);
+    box-shadow: 0 0 20px var(--cyber-green);
+  }
+  75% {
+    border-color: var(--cyber-purple);
+    box-shadow: 0 0 20px var(--cyber-purple);
+  }
+}
+
+.neon-border {
+  animation: neonBorder 4s infinite;
+}
+
+/* Grid Background */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Glitch Text Effect */
+.glitch {
+  position: relative;
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  animation: glitch-1 0.5s infinite;
+  color: var(--cyber-pink);
+  z-index: -1;
+}
+
+.glitch::after {
+  animation: glitch-2 0.5s infinite;
+  color: var(--cyber-cyan);
+  z-index: -2;
+}
+
+@keyframes glitch-1 {
+  0%, 14%, 15%, 49%, 50%, 99%, 100% {
+    transform: translate(0);
+  }
+  15%, 49% {
+    transform: translate(-2px, -1px);
+  }
+}
+
+@keyframes glitch-2 {
+  0%, 20%, 21%, 62%, 63%, 99%, 100% {
+    transform: translate(0);
+  }
+  21%, 62% {
+    transform: translate(2px, 1px);
+  }
+}
+
+/* Cyber Button */
+.cyber-button {
+  background: linear-gradient(45deg, var(--cyber-cyan), var(--cyber-pink));
+  border: none;
+  padding: 12px 30px;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  color: var(--dark-bg);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cyber-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+}
+
+.cyber-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.cyber-button:hover::before {
+  left: 100%;
+}
+
+/* Terminal Style */
+.terminal {
+  background: var(--dark-secondary);
+  border: 1px solid var(--cyber-green);
+  border-radius: 8px;
+  padding: 20px;
+  font-family: 'Courier New', monospace;
+  position: relative;
+}
+
+.terminal::before {
+  content: '$ ';
+  color: var(--cyber-green);
+  font-weight: bold;
+}
+
+/* Typing Animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { border-color: var(--cyber-green); }
+  51%, 100% { border-color: transparent; }
+}
+
+.typing-text {
+  overflow: hidden;
+  border-right: 2px solid var(--cyber-green);
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink 1s infinite;
+}
+
+/* Particle Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(120deg); }
+  66% { transform: translateY(10px) rotate(240deg); }
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--cyber-cyan);
+  border-radius: 50%;
+  animation: float 6s infinite ease-in-out;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cyber-cyan), var(--cyber-pink), var(--cyber-green));
+  z-index: 1000;
+  transition: width 0.1s ease;
+}
+
+/* Section Spacing */
+.section {
+  min-height: 100vh;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.section-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(45deg, var(--cyber-cyan), var(--cyber-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section {
+    padding: 50px 15px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--cyber-cyan), var(--cyber-pink));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(var(--cyber-pink), var(--cyber-green));
+}
