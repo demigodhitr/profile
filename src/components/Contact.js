@@ -18,19 +18,55 @@ const Contact = () => {
       [name]: value
     }));
   };
+  const telegramBotId = process.env.REACT_APP_TELEGRAM_BOT_ID;
+  const telegramChatId = process.env.REACT_APP_TELEGRAM_CHAT_ID;
+  
+  const telegramApiUrl = `https://api.telegram.org/bot${telegramBotId}/sendMessage`;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      alert('Message sent successfully!');
-    }, 2000);
-  };
+
+    const { name, email, subject, message } = formData;
+
+    const textMessage = `
+  📨 *New message fom your portfolio* \n
+  👤 *Name:* ${name} 
+  📧 *Email:* ${email} \n 
+  📝 *Subject:* ${subject} \n 
+  💬 *Message:*  
+  ${message}
+  `;
+
+    try {
+      const response = await fetch(telegramApiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          chat_id: telegramChatId,
+          text: textMessage,
+          parse_mode: "Markdown"
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.ok) {
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        alert('✅ Message sent successfully!');
+      } else {
+        console.error(result);
+        alert('❌ Failed to send message. Check console for details.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert("❌ An error occurred while sending message.");
+    }
+
+    setIsSubmitting(false);
+  };  
 
   const contactInfo = [
     {
