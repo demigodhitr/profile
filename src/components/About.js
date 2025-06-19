@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Demigod from '../assets/img/demigod.png'; 
 
 const About = () => {
   return (
@@ -24,9 +25,9 @@ const About = () => {
           >
             <div className="relative overflow-hidden rounded-2xl neon-border p-1">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2"
+                src={Demigod}
                 alt="Developer Profile"
-                className="w-full h-96 object-cover rounded-xl"
+                className="w-70 h-70 object-cover rounded-xl"
               />
               {/* Holographic Overlay */}
               <div className="absolute inset-0 bg-gradient-to-tr from-cyber-cyan/20 to-cyber-pink/20 rounded-xl"></div>
@@ -103,7 +104,7 @@ const About = () => {
               className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8"
             >
               {[
-                { number: '50+', label: 'Projects' },
+                { number: '8+', label: 'Full Stack Projects' },
                 { number: '3+', label: 'Years Exp' },
                 { number: '20+', label: 'Happy Clients' },
                 { number: '100%', label: 'Dedication' }
@@ -124,22 +125,6 @@ const About = () => {
                   <div className="text-sm text-text-secondary mt-1">{stat.label}</div>
                 </motion.div>
               ))}
-            </motion.div>
-
-            {/* Download CV Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-              className="pt-6"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="cyber-button bg-gradient-to-r from-cyber-pink to-cyber-purple px-6 py-3"
-              >
-                Download CV
-              </motion.button>
             </motion.div>
           </motion.div>
         </div>

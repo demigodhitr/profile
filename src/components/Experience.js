@@ -5,48 +5,26 @@ import { FaBriefcase, FaGraduationCap, FaAward } from 'react-icons/fa';
 const Experience = () => {
   const timelineData = [
     {
-      id: 1,
-      type: 'work',
-      icon: FaBriefcase,
-      title: 'Senior Full-Stack Developer',
-      company: 'TechCorp Solutions',
-      period: '2022 - Present',
-      description: 'Lead development of enterprise web applications using React, Django, and cloud technologies. Mentored junior developers and implemented best practices.',
-      technologies: ['React', 'Django', 'AWS', 'PostgreSQL'],
-      color: 'cyber-cyan'
-    },
-    {
       id: 2,
       type: 'work',
       icon: FaBriefcase,
       title: 'Full-Stack Developer',
-      company: 'Digital Innovations Inc',
-      period: '2020 - 2022',
-      description: 'Developed and maintained multiple client projects, specializing in React frontend and Django backend development. Delivered projects 20% ahead of schedule.',
-      technologies: ['React', 'Django', 'MongoDB', 'Redis'],
+      company: 'Freelance Projects',
+      period: '2023 - 2025',
+      description: 'Developed and maintained multiple client projects, specializing in HTML/React frontend and Django backend development. Delivered projects 20% ahead of schedule.',
+      technologies: ['React', 'Django', 'MariaDB', 'MySQL', 'HTML', 'CSS', 'Vanilla JS'],
       color: 'cyber-pink'
     },
     {
       id: 3,
       type: 'education',
       icon: FaGraduationCap,
-      title: 'Bachelor of Computer Science',
-      company: 'Tech University',
-      period: '2016 - 2020',
-      description: 'Graduated with honors, specializing in software engineering and web development. Active member of coding club and hackathon participant.',
-      technologies: ['Java', 'Python', 'Database Design', 'Algorithms'],
+      title: 'Bachelor of Science, Microbiology',
+      company: 'University of Cross River State',
+      period: '2019 - 2025',
+      description: 'Graduated with honors, specializing in Microbiology. However, my passion, experience and skills lies in the technical field and so, i have longed pursued my passion',
+      technologies: [],
       color: 'cyber-green'
-    },
-    {
-      id: 4,
-      type: 'achievement',
-      icon: FaAward,
-      title: 'Hackathon Winner',
-      company: 'CodeFest 2021',
-      period: '2021',
-      description: 'Won first place in national hackathon for developing an innovative social impact application using React Native and Django.',
-      technologies: ['React Native', 'Django', 'Firebase'],
-      color: 'cyber-purple'
     }
   ];
 
@@ -158,8 +136,7 @@ const Experience = () => {
             </h3>
             <div className="space-y-4">
               {[
-                'AWS Certified Developer',
-                'React Professional Certificate',
+                'Full-Stack Web Development Certification',
                 'Django Advanced Certification',
                 'Mobile App Development Expert'
               ].map((cert, index) => (
@@ -184,9 +161,7 @@ const Experience = () => {
             </h3>
             <div className="space-y-4">
               {[
-                { name: 'English', level: 'Native' },
-                { name: 'Spanish', level: 'Fluent' },
-                { name: 'French', level: 'Intermediate' }
+                { name: 'English', level: 'Native, Fluent' },
               ].map((lang, index) => (
                 <motion.div
                   key={lang.name}

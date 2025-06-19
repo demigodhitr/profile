@@ -35,42 +35,45 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: FaEnvelope,
-      title: 'Email',
-      value: 'alex@cybercoder.dev',
-      href: 'mailto:alex@cybercoder.dev',
-      color: 'cyber-cyan'
+      title: "Email",
+      value: "achodasaviour4@gmail.com",
+      href: "mailto:achodasaviour4@gmail.com",
+      color: "cyber-cyan",
     },
     {
       icon: FaPhone,
-      title: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
-      color: 'cyber-pink'
+      title: "Phone",
+      value: "+234 806 199 1511",
+      href: "tel:+2348061991511",
+      color: "cyber-pink",
     },
     {
       icon: FaMapMarkerAlt,
-      title: 'Location',
-      value: 'San Francisco, CA',
-      href: '#',
-      color: 'cyber-green'
-    }
+      title: "Location",
+      value: "Nigeria",
+      href: "#",
+      color: "cyber-green",
+    },
   ];
 
   const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com', label: 'GitHub', color: 'hover:text-cyber-cyan' },
-    { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn', color: 'hover:text-cyber-pink' },
-    { icon: FaTwitter, href: 'https://twitter.com', label: 'Twitter', color: 'hover:text-cyber-green' }
+    { icon: FaGithub, href: 'https://github.com/demigodhitr', label: 'GitHub', color: 'hover:text-cyber-cyan' },
+    { icon: FaTwitter, href: 'https://x.com/demigodHITR', label: 'Twitter', color: 'hover:text-cyber-green' }
   ];
 
   return (
-    <section id="contact" className="section bg-gradient-to-b from-dark-bg to-dark-secondary relative overflow-hidden">
+    <section
+      id="contact"
+      className="section bg-gradient-to-b from-dark-bg to-dark-secondary relative overflow-hidden"
+    >
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1499951360447-b19be8fe80f5)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1499951360447-b19be8fe80f5)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       ></div>
 
@@ -119,9 +122,9 @@ const Contact = () => {
                 Get In Touch
               </h3>
               <p className="text-text-secondary leading-relaxed mb-8">
-                Ready to bring your ideas to life? Whether you need a stunning website, 
-                a powerful web application, or mobile app development, I'm here to help. 
-                Let's create something amazing together!
+                Ready to bring your ideas to life? Whether you need a stunning
+                website, a powerful web application, or mobile app development,
+                I'm here to help. Let's create something amazing together!
               </p>
 
               {/* Contact Details */}
@@ -136,12 +139,18 @@ const Contact = () => {
                     whileHover={{ scale: 1.05, x: 10 }}
                     className="flex items-center space-x-4 p-4 rounded-lg hover:bg-white/5 transition-all duration-300 group"
                   >
-                    <div className={`w-12 h-12 rounded-full bg-${item.color}/20 flex items-center justify-center border border-${item.color}/30 group-hover:border-${item.color} transition-all duration-300`}>
+                    <div
+                      className={`w-12 h-12 rounded-full bg-${item.color}/20 flex items-center justify-center border border-${item.color}/30 group-hover:border-${item.color} transition-all duration-300`}
+                    >
                       <item.icon className={`text-${item.color} text-xl`} />
                     </div>
                     <div>
-                      <div className="text-sm text-text-secondary">{item.title}</div>
-                      <div className={`font-medium text-${item.color}`}>{item.value}</div>
+                      <div className="text-sm text-text-secondary">
+                        {item.title}
+                      </div>
+                      <div className={`font-medium text-${item.color}`}>
+                        {item.value}
+                      </div>
                     </div>
                   </motion.a>
                 ))}
@@ -149,7 +158,9 @@ const Contact = () => {
 
               {/* Social Links */}
               <div className="mt-8 pt-6 border-t border-cyber-cyan/20">
-                <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
+                <h4 className="text-lg font-semibold text-white mb-4">
+                  Follow Me
+                </h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
@@ -277,21 +288,25 @@ const Contact = () => {
                   whileTap={{ scale: 0.98 }}
                   className={`w-full py-4 px-6 rounded-lg font-medium transition-all duration-300 ${
                     isSubmitting
-                      ? 'bg-gray-600 cursor-not-allowed'
-                      : 'cyber-button bg-gradient-to-r from-cyber-pink to-cyber-purple hover:shadow-lg hover:shadow-cyber-pink/25'
+                      ? "bg-gray-600 cursor-not-allowed"
+                      : "cyber-button bg-gradient-to-r from-cyber-pink to-cyber-purple hover:shadow-lg hover:shadow-cyber-pink/25"
                   }`}
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center">
                       <motion.div
                         animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        transition={{
+                          duration: 1,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
                         className="w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2"
                       />
                       Sending...
                     </span>
                   ) : (
-                    'Send Message'
+                    "Send Message"
                   )}
                 </motion.button>
               </motion.div>
@@ -307,8 +322,9 @@ const Contact = () => {
           className="mt-20 pt-8 border-t border-cyber-cyan/20 text-center"
         >
           <p className="text-text-secondary">
-            © 2024 Alex Cyber. Built with{' '}
-            <span className="text-cyber-pink">❤️</span> using React & Framer Motion
+            © {new Date().getFullYear()} Saviour Achoda. Built with{" "}
+            <span className="text-cyber-pink">❤️</span> using React & Framer
+            Motion
           </p>
         </motion.div>
       </div>
