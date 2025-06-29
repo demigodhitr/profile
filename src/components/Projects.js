@@ -171,6 +171,8 @@ const Projects = () => {
                     <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <motion.a
                         href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         className="w-12 h-12 rounded-full bg-cyber-cyan/20 backdrop-blur-sm flex items-center justify-center border border-cyber-cyan hover:bg-cyber-cyan hover:text-black transition-all duration-300"
@@ -179,6 +181,8 @@ const Projects = () => {
                       </motion.a>
                       <motion.a
                         href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         className="w-12 h-12 rounded-full bg-cyber-pink/20 backdrop-blur-sm flex items-center justify-center border border-cyber-pink hover:bg-cyber-pink hover:text-black transition-all duration-300"
