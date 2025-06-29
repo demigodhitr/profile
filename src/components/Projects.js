@@ -21,7 +21,7 @@ const Projects = () => {
       category: "fullstack",
       technologies: ["HTML", "Django", "MySQL/MariaDB"],
       techIcons: [FaReact, SiDjango, FaJs, FaPython],
-      github: "https://github.com/demigodhitr",
+      github: "https://github.com/demigodhitr/lumisx",
       live: "https://lumisx.exchange",
       features: [
         "User Authentication",
