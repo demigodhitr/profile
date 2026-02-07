@@ -5,6 +5,7 @@ const Hero = () => {
   const [text, setText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
   const fullText = "Full-Stack Developer";
+  const heroBG = require('../assets/img/port-bg.png');
 
   useEffect(() => {
     let index = 0;
@@ -61,11 +62,9 @@ const Hero = () => {
       <div
         className="absolute inset-0 opacity-30"
         style={{
-          backgroundImage:
-            "url(https://images.pexels.com/photos/30880925/pexels-photo-30880925.jpeg)",
+          backgroundImage: `url(${heroBG})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "hue-rotate(180deg) saturate(1.5)",
         }}
       ></div>
 
