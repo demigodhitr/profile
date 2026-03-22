@@ -67,33 +67,33 @@ const Experience = () => {
                 {/* Content */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}
+                  className={`w-[45%] min-w-0 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}
                 >
-                  <div className="glass p-6 rounded-xl border border-cyber-cyan/20 hover:border-cyber-cyan/50 transition-all duration-300">
+                  <div className="glass p-3 sm:p-6 rounded-xl border border-cyber-cyan/20 hover:border-cyber-cyan/50 transition-all duration-300">
                     {/* Header */}
                     <div className="mb-4">
-                      <h3 className={`text-xl font-orbitron font-bold text-${item.color} mb-1`}>
+                      <h3 className={`text-sm sm:text-xl font-orbitron font-bold text-${item.color} mb-1`}>
                         {item.title}
                       </h3>
-                      <div className="flex items-center justify-between text-sm text-text-secondary">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-xs sm:text-sm text-text-secondary">
                         <span className="font-medium">{item.company}</span>
-                        <span className="bg-dark-tertiary px-3 py-1 rounded-full">
+                        <span className="bg-dark-tertiary px-2 sm:px-3 py-1 rounded-full whitespace-nowrap self-start">
                           {item.period}
                         </span>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-text-secondary leading-relaxed mb-4">
+                    <p className="text-text-secondary leading-relaxed mb-4 text-xs sm:text-base">
                       {item.description}
                     </p>
 
                     {/* Technologies */}
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
                       {item.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className={`px-3 py-1 text-xs rounded-full bg-${item.color}/10 border border-${item.color}/30 text-${item.color}`}
+                          className={`px-2 sm:px-3 py-1 text-xs rounded-full bg-${item.color}/10 border border-${item.color}/30 text-${item.color}`}
                         >
                           {tech}
                         </span>
@@ -104,14 +104,14 @@ const Experience = () => {
                   {/* Arrow */}
                   <div
                     className={`absolute top-1/2 transform -translate-y-1/2 ${
-                      index % 2 === 0 
-                        ? 'right-0 translate-x-1/2' 
+                      index % 2 === 0
+                        ? 'right-0 translate-x-1/2'
                         : 'left-0 -translate-x-1/2'
                     }`}
                   >
                     <div className={`w-0 h-0 border-t-8 border-b-8 border-transparent ${
-                      index % 2 === 0 
-                        ? 'border-l-8 border-l-cyber-cyan/20' 
+                      index % 2 === 0
+                        ? 'border-l-8 border-l-cyber-cyan/20'
                         : 'border-r-8 border-r-cyber-cyan/20'
                     }`}></div>
                   </div>
