@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaPython, FaMobile } from 'react-icons/fa';
+import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaPython, FaMobile, FaRust } from 'react-icons/fa';
 import { SiDjango, SiTailwindcss, SiFramer } from 'react-icons/si';
+import { GrCycle } from 'react-icons/gr';
 
 const Skills = () => {
   const skillCategories = [
@@ -9,11 +10,12 @@ const Skills = () => {
       title: 'Frontend',
       color: 'cyber-cyan',
       skills: [
-        { name: 'HTML5', level: 95, icon: FaHtml5, color: '#E34F26' },
-        { name: 'CSS3', level: 90, icon: FaCss3Alt, color: '#1572B6' },
-        { name: 'JavaScript', level: 92, icon: FaJs, color: '#F7DF1E' },
+        { name: 'HTML5', level: 90, icon: FaHtml5, color: '#E34F26' },
+        { name: 'CSS3', level: 83, icon: FaCss3Alt, color: '#1572B6' },
+        { name: 'JavaScript', level: 95, icon: FaJs, color: '#F7DF1E' },
         { name: 'React', level: 88, icon: FaReact, color: '#61DAFB' },
-        { name: 'Tailwind', level: 85, icon: SiTailwindcss, color: '#06B6D4' }
+        { name: 'React Native', level: 80, icon: FaMobile, color: '#61DAFB' },
+        { name: 'Tailwind', level: 70, icon: SiTailwindcss, color: '#06B6D4' }
       ]
     },
     {
@@ -21,7 +23,11 @@ const Skills = () => {
       color: 'cyber-pink',
       skills: [
         { name: 'Python', level: 90, icon: FaPython, color: '#3776AB' },
-        { name: 'Django', level: 85, icon: SiDjango, color: '#092E20' }
+        { name: 'Django', level: 85, icon: SiDjango, color: '#092E20' },
+        { name: 'Next.js', level: 75, icon: FaJs, color: '#339933' },
+        { name: 'Express.js', level: 70, icon: FaJs, color: '#000000' },
+        { name: 'Rust', level: 52, icon: FaRust, color: '#092E20' },
+        { name: 'DevOps', level: 69, icon: GrCycle, color: '#F7DF1E' }
       ]
     },
     {

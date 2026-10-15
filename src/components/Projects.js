@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaReact, FaJs, FaPython } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaReact, FaJs, FaPython,  } from 'react-icons/fa';
 import { SiDjango, SiTailwindcss } from 'react-icons/si';
-import lumisx from '../assets/img/lumisx.png';
-import swiflow from '../assets/img/logistics.png';
-import alpha from '../assets/img/alpha.png';
-import lumisxVideo from '../assets/videos/lumisx.mp4';
+import Zeelark from '../assets/img/zeelark.png';
+import OmniFetch from '../assets/img/omni-fetch.png';
+import Swiflow from '../assets/img/logistics.png';
+import ZeelarkVideo from '../assets/videos/zeelark.mp4';
+import WhoIsNigeria from '../assets/img/whois-nigeria.png';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -13,73 +14,71 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Simulated Brokerage platform",
+      title: "Omni Fetch - Social Media Video and Photo downloader",
       description:
-        "Full-stack brokerage PWA with HTML/TAILWIND/VANILLA JS frontend, Django backend, and real-time updates.",
-      image: lumisx,
-      video: lumisxVideo,
+        "A closed-source responsive web application that allows users to download videos and photos from various social media platforms including Instagram, Pinterest, Facebook, TikTok and X (Twitter).",
+      image: OmniFetch,
       category: "fullstack",
-      technologies: ["HTML", "Django", "MySQL/MariaDB"],
-      techIcons: [FaReact, SiDjango, FaJs, FaPython],
-      github: "https://github.com/demigodhitr/lumisx",
-      live: "https://lumisx.exchange",
+      technologies: ["React Vite", "Tailwind", "Python-Django", "SQLite3"],
+      techIcons: [FaJs, FaReact, SiTailwindcss, SiDjango, FaPython, FaGithub],
+      github: "https://github.com/demigodhitr",
+      live: "https://fetch.demiverse.link",
       features: [
-        "User Authentication",
-        "Crypto Deposit, withdrawal",
-        "Admin Dashboard",
-        "Real-time Updates",
-        "Responsive Design",
+        "Fetch public Videos",
+        "Fetch public Photos",
+        "Download single or multiple media files",
         "Dark/Light Mode",
+        "Responsive, Modern Design",
       ],
     },
     {
       id: 2,
-      title: "Social Media Dashboard",
+      title: "Zeelark - Simulated Brokerage platform",
       description:
-        "Interactive dashboard for social media analytics with beautiful data visualizations and real-time metrics.",
-      image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
-      category: "frontend",
-      technologies: ["React", "Chart.js", "Tailwind", "Framer Motion"],
-      techIcons: [FaReact, SiTailwindcss],
+        "A closed-sourceFull-stack mobile-centric Progressive Web App (PWA) built using CRA, (Create React App) and designed to mimick a native mobile application while running in a browser. Actual stacks includes React, Tailwind CSS, Service-worker & manifest, Python-Django backend, and is compatible with PostgresSQL, MariaDB/MySQL databases. It allows users to simulate trading of stocks, and cryptocurrencies with real-time data. Please note that this project is not plugged into any real brokerage platform, and is only a simulation for educational purposes.",
+      image: Zeelark,
+      video: ZeelarkVideo,
+      category: "fullstack",
+      technologies: ["React JS", "Tailwind CSS", "Django", "Lucid React", "PostgreSQL/MySQL/MariaDB"],
+      techIcons: [FaJs, FaReact, SiTailwindcss, SiDjango, FaPython, FaGithub],
       github: "https://github.com/demigodhitr",
-      live: "#",
+      live: "https://zeelark.com",
       features: [
-        "Data Visualization",
+        "User Authentication",
+        "Crypto Deposit, withdrawal",
+        "Internal Transfers",
+        "Simulated Trading of Stocks and Cryptocurrencies",
+        "ComprehensiveAdmin Dashboard with broad functionalities",
+        "Real-time simulated Updates",
         "Responsive Design",
         "Dark/Light Mode",
-        "Export Reports",
       ],
     },
     {
       id: 3,
-      title: "Logistics Website",
+      title: "WhoIs-Nigeria - Vendor Credibility and Verification Platform",
       description:
-        "Responsive Website for logistics management and order tracking",
-      image: swiflow,
+        "WhoIs-Nigeria is a digital trust and verification platform that helps Nigerians verify individuals and businesses, identify potential scams, and make safer decisions online through transparent reviews, credibility assessments, and fraud reporting.",
+      image: WhoIsNigeria,
       category: "fullstack",
-      technologies: ["Django", "HTML", "Tailwind", "Vanilla JS"],
-      techIcons: [SiDjango, FaPython],
+      technologies: ["Python-Django", "React Vite", "Tailwind"],
+      techIcons: [SiDjango, FaPython, SiTailwindcss, FaJs, FaReact, FaGithub],
       github: "https://github.com/demigodhitr",
       live: "https://swiflowlogistics.com",
       features: ["Order tracking", "Real time Quotation", "Real-time Sync"],
     },
     {
       id: 4,
-      title: "Simulated Online Banking System",
+      title: "Logistics & Order Tracking Platform",
       description:
-        "Responsive full stack web application for online banking and financial management",
-      image: alpha,
+        "closed-source Responsive plain html and core stacks Website for logistics management and order tracking, built under NDA.",
+      image: Swiflow,
       category: "fullstack",
-      technologies: ["Django", "HTML", "Tailwind", "Vanilla JS"],
-      techIcons: [SiDjango, FaPython],
+      technologies: ["Python-Django", "HTML", "Tailwind CSS", "Vanilla JS"],
+      techIcons: [SiDjango, FaPython, SiTailwindcss, FaJs, FaReact, FaGithub],
       github: "https://github.com/demigodhitr",
-      live: "https://alphafundify.com",
-      features: [
-        "Transfers",
-        "Authentication",
-        "Real-time Sync",
-        "Simulated financial transactions",
-      ],
+      live: "#",
+      features: ["Order tracking", "Real time Quotation", "Real-time Sync"],
     },
   ];
 
