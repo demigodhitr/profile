@@ -5,7 +5,7 @@ const Hero = () => {
   const [text, setText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
   const fullText = "Full-Stack Developer";
-  const heroBG = require('../assets/img/port-bg.png');
+  const heroBG = require('../assets/img/ph_bg.png');
 
   useEffect(() => {
     let index = 0;
